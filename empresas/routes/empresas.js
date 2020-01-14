@@ -11,7 +11,7 @@ empresaRouter.post('/', auth, async (req, res) => {
 		const empresa = {
 			NIT: req.body.nit,
 			nombre: req.body.nombre,
-			dueño: req.body.dueño,
+			//dueño: req.body.dueño,
 			horarios: req.body.horarios,
 			telefono: req.body.telefono,
 		};
