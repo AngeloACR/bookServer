@@ -13,7 +13,7 @@ module.exports = {
 		host: 'localhost',
 		mysqlPort: '3306',
 		mysqlUser: 'root',
-		mysqlPass: "MiNegrita47",
+		mysqlPass: "mysqltecnobunker",
 		dbName: 'bookApp',
 		connectionLimit: 100
 	 
