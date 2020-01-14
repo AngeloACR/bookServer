@@ -26,7 +26,8 @@ empresaRouter.post('/', auth, async (req, res) => {
 // Delete user
 empresaRouter.delete('/', auth, async (req, res, next) => {
 	try {
-		const item = req.query.item;
+		const jsonItem = req.query.item; 
+		let item = JSON.parse(jsonItem); 
 		let response = await Empresa.deleteEmpresa(item.nit);
 		res.status(200).json(response);
 	}

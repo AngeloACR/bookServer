@@ -27,7 +27,8 @@ userRouter.post('/', async (req, res) => {
 userRouter.delete('/', auth, async (req, res, next) => {
 	try {
 
-		const item = req.query.item;
+		const jsonItem = req.query.item; 
+		let item = JSON.parse(jsonItem); 
 		let response = await User.deleteUser(item.usuario);
 		res.status(200).json(response);
 	}

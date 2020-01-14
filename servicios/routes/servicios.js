@@ -71,7 +71,8 @@ servicioRouter.put('/', auth, async (req, res) => {
 
 servicioRouter.delete('/', auth, async (req, res) => {
 	try {
-		const item = req.query.item;
+		const jsonItem = req.query.item; 
+		let item = JSON.parse(jsonItem); 
 		let response = await Servicio.deleteServicio(item.ref);
 		res.status(200).json(response);
 	}
