@@ -15,10 +15,13 @@ module.exports.addEmpresa = async function (newEmpresa) {
 		if (results.length != 0) {
 			throw new Error('Empresa already in use');
 		} else {
-			query = 'INSERT INTO ?? (??, ??, ??, ??, ??) VALUES (?, ?, ?, ?, ?)';
+/* 			query = 'INSERT INTO ?? (??, ??, ??, ??, ??) VALUES (?, ?, ?, ?, ?)';
 			queryData = ['empresas', 'NIT', 'nombre', 'dueño', 'horarios', 'telefono', newEmpresa.NIT, newEmpresa.nombre, newEmpresa.dueño, newEmpresa.horarios, newEmpresa.telefono];
+ */			query = 'INSERT INTO ?? (??, ??, ??, ??) VALUES (?, ?, ?, ?, ?)';
+			queryData = ['empresas', 'NIT', 'nombre', 'dueño', 'telefono', newEmpresa.NIT, newEmpresa.nombre, newEmpresa.dueño, newEmpresa.telefono];
+
 			results = await this.queryDb(query, queryData);
-			let response = {
+ 			let response = {
 				status: true,
 				values: results
 			}
@@ -28,6 +31,10 @@ module.exports.addEmpresa = async function (newEmpresa) {
 		throw error;
 	}
 };
+
+module.exports.setHorario = function(horarios){
+
+}
 
 module.exports.deleteEmpresa = async function (NIT) {
 	try {

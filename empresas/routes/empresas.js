@@ -6,14 +6,16 @@ const async = require('async');
 const Empresa = require('../models/empresa');
 
 //**************************** USER CRUD************************************//
-empresaRouter.post('/', auth, async (req, res) => {
+empresaRouter.post('/'/* , auth */, async (req, res) => {
 	try {
+		let horarios = req.body.horarios
+		horarios = Empresa.setHorario(horarios);
 		const empresa = {
 			NIT: req.body.nit,
 			nombre: req.body.nombre,
-			//dueño: req.body.dueño,
-			horarios: req.body.horarios,
-			telefono: req.body.telefono,
+			dueño: req.body.nombreEncargado,
+			//horarios: req.body.horarios,
+			telefono: req.body.telefono1,
 		};
 		let newEmpresa = await Empresa.addEmpresa(empresa);
 		res.status(200).json(newEmpresa);
