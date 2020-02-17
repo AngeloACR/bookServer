@@ -28,5 +28,4 @@ module.exports = {
 	mysqlPass: process.env.mysqlPass,
 	dbName: process.env.dbName,
 	connectionLimit: process.env.connectionLimit, */
-
 }
