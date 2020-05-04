@@ -148,6 +148,7 @@ ALTER TABLE comandas ADD FOREIGN KEY (reservacion) REFERENCES reservas (id);
 INSERT INTO users (id, usuario, contraseña, tipo) VALUES
 (1, "bookAdmin", "$2y$12$4FkzO8zJv9PhkQgKsNz8BeMAAdaYJYZP0OuSDAbzqyK0wNvC5Dvsa", "Admin"),
 (2, "bookEmpleado", "$2y$12$4FkzO8zJv9PhkQgKsNz8BeMAAdaYJYZP0OuSDAbzqyK0wNvC5Dvsa", "Empleado");
+(3, "bookEmpresa", "$2y$12$4FkzO8zJv9PhkQgKsNz8BeMAAdaYJYZP0OuSDAbzqyK0wNvC5Dvsa", "Empre");
 
 INSERT INTO empresas (id, NIT, nombre, dueño, horarios, telefono) VALUES 
 (1, "01", "Peluqueria La mano de Dios", "bookAdmin", "6:00am/6:00pm", 12121212),

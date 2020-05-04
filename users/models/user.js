@@ -134,11 +134,12 @@ module.exports.getUser = async function(id) { //Need tons of work
             throw new Error("Username doesn't exist")
         }
         let user = {
-            //			id: results[0].id,
+            id: results[0].id,
             usuario: results[0].usuario,
+            correo: results[0].correo,
             tipo: results[0].tipo
         }
-        let fields = ['Usuario', 'Tipo']
+        let fields = ['Id', 'Usuario', 'Correo', 'Tipo']
         let response = {
             status: true,
             values: user,
@@ -197,13 +198,14 @@ module.exports.getUsers = async function() { //Need tons of work
         var i = 0;
         results.forEach(function(result) {
             uMap[i] = {
-                //				id: result.id,
+                id: result.id,
                 usuario: result.usuario,
+                correo: result.correo,
                 tipo: result.tipo
             };
             i++;
         });
-        let fields = ['Usuario', 'Tipo']
+        let fields = ['Id', 'Usuario', 'Correo', 'Tipo']
         let response = {
             status: true,
             values: uMap,
